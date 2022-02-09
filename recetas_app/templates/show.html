@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="{{url_for('static',filename='css/styles2.css')}}"/>
+        <title>  Recetas </title>
+    </head>
+    <body>
+        <div class='botones'>
+            <form action="/" method="GET">
+                <button type="submit">
+                    Logout
+                </button>
+            </form>
+            <form action="/dashboard",method="GET">
+                <button type="submit">
+                    Dashboard
+                </button>
+            </form>
+        </div>
+        <div class='cuadro'>
+            <div class='titulo'>
+                <div><h1>{{receta['name']}}</h1></div>
+                <div class='repor'> <h3>Description: {{receta['description']}}</h3></div>
+                <div class='repor'> <h3>Under 30 minutes: {{receta['under_min']}}</h3></div>
+                <div class='repor'> <h3>Instructions: {{receta['instructions']}}</h3></div>
+                <div class='repor'> <h3>Date made: {{receta.date_made.strftime('%B %d, %Y')}}</h3></div>
+            </div>          
+        </div>
+    </body>
+</html>

@@ -1,0 +1,40 @@
+.todo{
+    display: flex;
+    justify-content: space-around;
+}
+.item{
+    display: flex;
+    flex-direction: column;
+}
+.registro{
+    border: 3px solid black;
+    padding: 20px;
+    background-color: gray;
+    color: white;
+}
+.item{
+    margin-top: 20px;
+}.registro>button{
+    margin-top: 20px;
+    cursor: pointer;
+    background-color: green;
+    color: white;
+}
+#description{
+    width: 228px; 
+    height: 98px;
+    size: 32 
+}
+
+.error{
+    background-color: red;
+}
+.botones{
+    display: flex;
+    margin-top: 20px;
+}
+button{
+    cursor: pointer;
+    background-color: green;
+    color: white;
+}

@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="{{url_for('static',filename='css/styles3.css')}}"/>
+        <title> Ediar Usuario </title>
+    </head>
+    <body>
+        <div class='todo'>
+            <div class: "form">
+                <h1>
+                    Editar Recipe
+                </h1>
+                <div class='registrar'>
+                    <form action="/edit/{{receta['id']}}" method="POST" class='registro'>
+                        <div class = 'item'>
+                            <label for="name">
+                                Name
+                            </label> 
+                            <input type="text" id="name" name="name" placeholder="{{receta['name']}}" />
+                        </div>
+                        <div class='item'>
+                            <label for="description">
+                                Description:
+                            </label> 
+                            <input type="text" id="description" name="description" placeholder="{{receta['description']}}"/>
+                        </div>
+                        <div class='item'>
+                            <label for="instructions">
+                                Intructions:
+                            </label> 
+                            <input type="text" id="instructions" name="instructions" placeholder="{{receta['instructions']}}" />
+                        </div>
+                        <div class='item'>
+                            <label for="date_made">
+                                Date Made On:
+                            </label> 
+                            <input type="date" id="date_made" name="date_made" required="required" placeholder="{{receta['date_made']}}" />
+                        </div>
+                        <div class='item'>
+                            <label for="under_min">
+                                Under 30 Minutes:
+                            </label> 
+                            <br>
+                            <input type="radio" id="under_min" name="under_min" value='Yes' checked />Yes <br>
+                            <input type="radio" id="under_min" name="under_min" value='No' />No 
+                        </div>
+                        <button type="submit">
+                            Update
+                        </button>
+                    </form>
+                </div>
+            </div>
+            <div class='botones'>
+                <div>
+                    <form action="/" method="GET">
+                        <button type="submit">
+                            Logout
+                        </button>
+                    </form>
+                </div>
+                <div>
+                    <form action="/dashboard",method="GET">
+                        <button type="submit">
+                            Dashboard
+                        </button>
+                    </form>
+                </div>
+            </div>
+        </div>
+        
+    </body>
+</html>

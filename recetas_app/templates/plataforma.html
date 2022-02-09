@@ -1,0 +1,65 @@
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="{{url_for('static', filename='css/styles1.css')}}" />
+        <title> Dashboard </title>
+    </head>
+    <body>
+        <div class="titulo">
+            <div>
+                <h1> Walcome {{ session['first_name'] }}!!  </h1>
+                <h1> These are the recipes</h1>
+            </div>
+            <div>
+                <form action="/" method="GET" class="logaut">
+                    <button type="submit">
+                        Logout
+                    </button>
+                </form>  
+            </div>
+        </div>
+        <div class='table'>
+            <table>
+                <thead>
+                    <tr>
+                        <th class='menu'>Name</th>
+                        <th class='menu'>Under 30 minutes?</th>
+                        <th class='menu'>Actions</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {% for rece  in resto %}
+                        <tr>
+                            <th class='datos'>{{rece['name']}}</th>
+                            <th class='datos'>{{rece['under_min']}}</th>
+                            <th class='operacion'>
+                                <form class='pestaña' action="/recipes/{{rece['id']}}" method="GET" >
+                                    <button type="submit" />
+                                      <strong>  view instructions </strong> 
+                                    </button>
+                                </form>
+                                <form class='pestaña' action="/recipes/edit/{{rece.id}}",method="GET">
+                                    <button type="submit" />
+                                        <strong>edit</strong>
+                                    </button>
+                                </form>
+                                <form class='pestaña' action="/eliminar/{{rece.id}}", method="POST">
+                                    <button type="submit" />
+                                        <strong>delete </strong>
+                                    </button>
+                                </form>
+                            </th>
+                        </tr>                    
+                    {% endfor %}
+                </tbody>
+            </table> 
+        </div> 
+        <form action="/recipes/new" method="GET" class="add">
+            <button type="submit" />
+                Create
+            </button>
+        </form> 
+    </body>
+</html>

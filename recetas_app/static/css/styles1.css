@@ -1,0 +1,47 @@
+.titulo{
+    display: flex;
+    justify-content: space-around;
+}
+.operacion{
+    display: flex;
+    justify-content: center;
+}
+.table{
+    display: flex;
+    justify-content: center;
+}
+p{
+    padding-left: 450px;
+}
+.menu{
+    background-color: gray;
+    color: yellow;
+    height: 30px;
+    width: 150px;
+}
+.datos{
+    background-color: aliceblue;
+    height: 30px;
+    width: 150px;
+}
+
+.operacion>form>button{
+    color: blue;
+    border-style: none;
+    background-color: transparent;
+    margin-top: 20px;
+    cursor: pointer;
+}
+
+.add >button{
+    margin-top: 20px;
+    cursor: pointer;
+    background-color: green;
+    color: white;
+    margin-left: 400px;
+}
+.logaut>button{
+    cursor: pointer;
+    background-color: green;
+    color: white;
+}

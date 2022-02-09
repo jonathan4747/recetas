@@ -1,0 +1,20 @@
+.botones{
+    display: flex;
+    justify-content: end;
+}
+.cuadro{
+    display: flex;
+    justify-content: center;
+}
+.titulo{
+    border: 3px solid black;
+    padding: 20px;
+    background-color: gray;
+    color: white;
+}
+button{
+    margin-right: 20px;
+    cursor: pointer;
+    background-color: green;
+    color: white;
+}

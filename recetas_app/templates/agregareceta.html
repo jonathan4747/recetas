@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="{{url_for('static',filename='css/styles3.css')}}"/>
+        <title> Agregar Receta </title>
+    </head>
+    <body>
+        <div class='todo'>
+            <div class: "form">
+                <div>
+                    <h1>
+                        Add New Recipe
+                    </h1>
+                </div>
+                <div class="error">
+                    {% with messages = get_flashed_messages(category_filter = ["rece"]) %}     
+                        {% if messages %}                            
+                            <h2>Ocurrio Algo</h2>
+                            {% for message in messages %}            
+                                <p>{{message}}</p>                   
+                            {% endfor %}
+                        {% endif %}
+                    {% endwith %}
+                </div>
+                <div class='registrar'>
+                    <form action="/registrar" method="POST" class='registro'>
+                        <div class = 'item'>
+                            <label for="name">
+                                Name
+                            </label> 
+                            <input type="text" id="name" name="name" />
+                        </div>
+                        <div class='item'>
+                            <label for="description">
+                                Description:
+                            </label> 
+                            <input type="text" id="description" name="description"/>
+                        </div>
+                        <div class='item'>
+                            <label for="instructions">
+                                Intructions:
+                            </label> 
+                            <input type="text" id="instructions" name="instructions" />
+                        </div>
+                        <div class='item'>
+                            <label for="date_made">
+                                Date Made On:
+                            </label> 
+                            <input type="date" id="date_made" name="date_made" required="required" />
+                        </div>
+                        <div class='item'>
+                            <label for="under_min">
+                                Under 30 Minutes:
+                            </label> 
+                            <br>
+                            <input type="radio" id="under_min" name="under_min" value='Yes' checked />Yes <br>
+                            <input type="radio" id="under_min" name="under_min" value='No' />No 
+                        </div>
+                        <button type="submit">
+                            ADD
+                        </button>
+                    </form>
+                </div>
+            </div>
+            
+            <div class='botones'>
+                <div>
+                    <form action="/" method="GET">
+                        <button type="submit">
+                            Logout
+                        </button>
+                    </form>
+                </div>
+                <div>
+                    <form action="/dashboard",method="GET">
+                        <button type="submit">
+                            Dashboard
+                        </button>
+                    </form>
+                </div>
+            </div>
+        
+        </div>
+    </body>
+</html>

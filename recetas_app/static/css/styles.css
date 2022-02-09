@@ -1,0 +1,33 @@
+body{
+    display: flex;
+    justify-content: space-around;
+}
+h2{
+    color: brown;
+}
+.registro{
+    width: 350px;
+    background-color: gray;
+    padding: 0px 10px 0px 10px;
+
+}
+.login{
+    width: 350px;
+    background-color: gray;
+    padding: 0px 10px 0px 10px;
+    
+}
+.menu>div{
+    margin-top: 20px;
+    display: flex;
+    flex-direction: column;
+    color: white
+}
+.menu > button{
+    margin-top: 20px;
+    cursor: pointer;
+    background-color: aquamarine;
+}
+.error{
+    background-color: red;
+}
